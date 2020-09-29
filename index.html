@@ -49,7 +49,7 @@
 </div>
 </div>
    
-<script type="text/javascript">
+ <script type="text/javascript">
     function validateName() {
             var name = document.getElementById('name').value;
             if(name.length == 0) {
@@ -57,21 +57,21 @@
               return false;
 
             }
-            if (!name.match(/^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/)) {
-              alert("Please enter your correct name") ;//Validation Message
-              return false;
-            }
+           
             return true;
           }  
 
 
         function validateForm() {
-          if (validateName()) {
+          if (!validateName()) {
 
-            asubmitted=true;
+            alert("Form not submitted");//Validation Message
+            return false;
+          }
+          else {
+            submitted=true;
             return true;
           }
-          
         }
         </script>
 <!-- End Contact Section -->
